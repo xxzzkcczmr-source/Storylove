@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моей самой любимой 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- === ГЛАВНАЯ КОМНАТА === -->
+    <div class="scene active" id="main-room">
+        <h1 class="scene-title">Наша комната</h1>
+
+        <!-- Интерактивные точки в комнате -->
+        <div class="hotspot" style="top: 25%; left: 50%;" onclick="showScene('head-view')">
+            <div class="hotspot-icon">👩</div>
+            <span>Твое лицо</span>
+        </div>
+
+        <div class="hotspot" style="bottom: 20%; left: 35%;" onclick="showMessage('bed-message')">
+            <div class="hotspot-icon">🛏️</div>
+            <span>Наша кровать</span>
+        </div>
+
+        <div class="hotspot" style="top: 20%; right: 15%;" onclick="showScene('night-sky')">
+            <div class="hotspot-icon">🌃</div>
+            <span>Ночное небо</span>
+        </div>
+
+        <div class="hotspot" style="bottom: 25%; right: 25%;" onclick="showMessage('photo-message')">
+            <div class="hotspot-icon">📸</div>
+            <span>Наше фото</span>
+        </div>
+
+        <div class="hotspot" style="top: 50%; left: 20%;" onclick="showMessage('window-message')">
+            <div class="hotspot-icon">🌅</div>
+            <span>Окно</span>
+        </div>
+    </div>
+
+    <!-- === ПРИБЛИЖЕНИЕ К ЛИЦУ === -->
+    <div class="scene" id="head-view">
+        <h1 class="scene-title">Твое прекрасное лицо</h1>
+
+        <div class="hotspot" style="top: 30%; left: 45%;" onclick="showMessage('eyes-message')">
+            <div class="hotspot-icon">👀</div>
+            <span>Твои глаза</span>
+        </div>
+
+        <div class="hotspot" style="bottom: 35%; left: 50%;" onclick="showMessage('lips-message')">
+            <div class="hotspot-icon">👄</div>
+            <span>Твои губы</span>
+        </div>
+
+        <div class="hotspot" style="top: 40%; right: 40%;" onclick="showMessage('hair-message')">
+            <div class="hotspot-icon">💇</div>
+            <span>Твои волосы</span>
+        </div>
+
+        <div class="hotspot" style="top: 60%; left: 55%;" onclick="showMessage('smile-message')">
+            <div class="hotspot-icon">😊</div>
+            <span>Твоя улыбка</span>
+        </div>
+
+        <button class="back-btn" onclick="showScene('main-room')">← Назад в комнату</button>
+    </div>
+
+    <!-- === НОЧНОЕ НЕБО === -->
+    <div class="scene" id="night-sky">
+        <h1 class="scene-title">Звездное небо для нас</h1>
+        <div id="stars-container"></div>
+
+        <div class="hotspot" style="top: 50%; left: 50%;" onclick="showMessage('stars-message')">
+            <div class="hotspot-icon">✨</div>
+            <span>Загадать желание</span>
+        </div>
+
+        <div class="hotspot" style="top: 30%; left: 30%;" onclick="showMessage('moon-message')">
+            <div class="hotspot-icon">🌙</div>
+            <span>Наша луна</span>
+        </div>
+
+        <button class="back-btn" onclick="showScene('main-room')">← Назад в комнату</button>
+    </div>
+
+    <!-- === ОКНО СООБЩЕНИЙ === -->
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-box">
+            <div class="message-content" id="messageContent">
+                <!-- Сюда подставляется текст -->
+            </div>
+            <button class="close-btn" onclick="closeMessage()">💖 Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
